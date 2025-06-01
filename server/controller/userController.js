@@ -10,14 +10,17 @@ export const create = async (req, res) => {
             return res.status(400).json({ errorMessage: "User already exists" });
         }
         const savedData = await newUser.save();
-        res.status(200).json(savedData);
+        // res.status(200).json(savedData);
+        res.status(200).json({ message: "User created successfully" });
+
     } catch (error) {
         res.status(500).json({ errorMessage: error.message });
+        console.error("Create User Error:", error);
     }
 };
 
 export const getAllUsers = async (req, res) => { 
-    try {
+    try { 
         const userData = await User.find();
         if(!userData || userData.length === 0) {
             return res.status(404).json({ errorMessage: "No users found" });
@@ -25,6 +28,7 @@ export const getAllUsers = async (req, res) => {
         res.status(200).json(userData);
     } catch (error) {
         res.status(500).json({ errorMessage: error.message });
+        console.error("Create User Error:", error);
     }
 }
 
@@ -38,6 +42,7 @@ export const getUserById = async (req, res) => {
         res.status(200).json(userExist);
     } catch (error) {
         res.status(500).json({ errorMessage: error.message });
+        console.error("Create User Error:", error);
     }
 };
 
@@ -48,11 +53,14 @@ export const update = async (req, res) => {
         if (!userExist) {
             return res.status(404).json({ errorMessage: "User not found" });
         }
-        await User.findByIdAndUpdate(id, req.body, { new: true });
+       const updatedData =  await User.findByIdAndUpdate(id, req.body, { new: true });
+        // res.status(200).json({updatedData});
         res.status(200).json({ message: "User updated successfully" });
     } catch (error) {
         res.status(500).json({ errorMessage: error.message });
-    }
+        console.error("Create User Error:", error);
+
+    } 
 };
 
 export const deleteUser = async (req, res) => {
@@ -66,5 +74,7 @@ export const deleteUser = async (req, res) => {
         res.status(200).json({ message: "User deleted successfully" });
     } catch (error) {
         res.status(500).json({ errorMessage: error.message });
+        console.error("Create User Error:", error);
+
     }
 }
