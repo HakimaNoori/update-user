@@ -97,7 +97,6 @@
   font-size: 14px;
 }
 
-/* ✅ ریسپانسیو موبایل */
 @media (max-width: 768px) {
   .addUser {
     width: 90%;
@@ -142,7 +141,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  flex-wrap: wrap; /* ✅ تا در موبایل زیر هم بیفتند */
+  flex-wrap: wrap;
 }
 
 .actionButtons .btn-info {
@@ -161,7 +160,7 @@
   padding: 6px 10px;
 }
 
-/* ✅ ریسپانسیو موبایل */
+
 @media (max-width: 768px) {
   .userTable {
     padding: 15px;
@@ -187,4 +186,9 @@
     font-size: 12px;
     padding: 5px 8px;
   }
+}
+
+.noData {
+  margin-top: 20px;
+  text-align: center;
 }

@@ -37,43 +37,51 @@ const User = () => {
       <Link to="/add" className="btn">
         <i className="fa-solid fa-user-plus"></i> Add User
       </Link>
-      <table className="table table-bordered">
-        <thead>
-          <tr>
-            <th>S.No.</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => (
-            <tr key={user._id}>
-              <td>{index + 1}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.address}</td>
-              <td className="actionButtons">
-                <Link
-                  to={`/update/` + user._id}
-                  type="button"
-                  className="btn btn-info"
-                >
-                  <i className="fa-solid fa-pen-to-square"></i>
-                </Link>
-                <button
-                  onClick={() => deleteUser(user._id)}
-                  type="button"
-                  className="btn btn-danger"
-                >
-                  <i className="fa-solid fa-trash"></i>
-                </button>
-              </td>
+
+      {users.length === 0 ? (
+        <div className="noData">
+          <h3>Not DAta to display.</h3>
+          <p>Please add New User</p>
+        </div>
+      ) : (
+        <table className="table table-bordered">
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((user, index) => (
+              <tr key={user._id}>
+                <td>{index + 1}</td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.address}</td>
+                <td className="actionButtons">
+                  <Link
+                    to={`/update/` + user._id}
+                    type="button"
+                    className="btn btn-info"
+                  >
+                    <i className="fa-solid fa-pen-to-square"></i>
+                  </Link>
+                  <button
+                    onClick={() => deleteUser(user._id)}
+                    type="button"
+                    className="btn btn-danger"
+                  >
+                    <i className="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };
