@@ -1,37 +1,90 @@
 .addUser {
-  background-color: aquamarine;
-  width: 25%;
+  background-color: #f6d8bf;
+  width: 35%;
+  min-width: 320px;
   margin: 50px auto;
   padding: 40px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
-.addUserForm .inputGroup{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-} 
-
-.addUserForm .inputGroup label{
-    margin-top: 5px;
-
-}
-
-.addUserForm .inputGroup input{
-    padding: 10px;
-    margin-top: 5px;
-}
-
-.addUserForm .inputGroup button{
-    margin-top: 5px;
+.btn{
+    background-color: #156f3d;
 }
 
 .addUser h3 {
-    margin-top: 30px;
-    text-align: center;
-    font-weight: bold;
-    color: darkcyan;
-    text-transform: uppercase ;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #0f766e;
+  text-transform: uppercase;
+  font-size: 22px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.addUserForm .inputGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.addUserForm .inputGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.addUserForm .inputGroup input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border 0.2s ease;
+}
+
+.addUserForm .inputGroup input:focus {
+  border-color: #0f766e;
+  outline: none;
+}
+
+.addUserForm .inputGroup button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.addUser .btn-secondary {
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* ✅ ریسپانسیو موبایل */
+@media (max-width: 768px) {
+  .addUser {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .addUser h3 {
+    font-size: 18px;
+  }
+
+  .addUserForm .inputGroup input {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .addUserForm .inputGroup button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .addUser .btn-secondary {
+    font-size: 13px;
+  }
 }

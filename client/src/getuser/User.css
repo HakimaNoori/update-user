@@ -1,28 +1,190 @@
-.userTable{
-    width: 60%;
-    margin: 50px auto;
-    background-color: white;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 1px  1px 8px rgba(0, 0, 0, 0.065);
-
+.userTable {
+  width: 95%;
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: #c5c1c1;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.userTable table{
-    width: 100%;
-    margin-top: 30px;
+.userTable .btn {
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  padding: 10px 16px;
+    background-color: #1dc38e;
 }
 
-.userTable table thead th {
-    background-color: darkcyan;
-    color: white;
-}
-.userTable table tbody th{
-    padding: 10px;
-    text-align: center;
-    vertical-align: middle;
+.userTable table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; 
+  word-wrap: break-word; 
 }
 
-.actionButtons button {
-    margin: 0 10px;
+.userTable thead th {
+  background-color: #f8d09f;
+  color: #050505;
+  padding: 14px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 5px;}
+.addUser {
+  background-color: #f6d8bf;
+  width: 35%;
+  min-width: 320px;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn{
+    background-color: #156f3d;
+}
+
+.addUser h3 {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #0f766e;
+  text-transform: uppercase;
+  font-size: 22px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.addUserForm .inputGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.addUserForm .inputGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.addUserForm .inputGroup input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border 0.2s ease;
+}
+
+.addUserForm .inputGroup input:focus {
+  border-color: #0f766e;
+  outline: none;
+}
+
+.addUserForm .inputGroup button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.addUser .btn-secondary {
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* ✅ ریسپانسیو موبایل */
+@media (max-width: 768px) {
+  .addUser {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .addUser h3 {
+    font-size: 18px;
+  }
+
+  .addUserForm .inputGroup input {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .addUserForm .inputGroup button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .addUser .btn-secondary {
+    font-size: 13px;
+  }
+}
+
+.userTable tbody td {
+  padding: 12px;
+  border-top: 1px solid #8e8e8e;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  border-radius: 5px;
+  word-break: break-word;
+}
+
+.userTable tbody tr:hover {
+  background-color: #f9f9f9;
+  transition: 0.2s;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap; /* ✅ تا در موبایل زیر هم بیفتند */
+}
+
+.actionButtons .btn-info {
+  background-color: #17a2b8;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+.actionButtons .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+/* ✅ ریسپانسیو موبایل */
+@media (max-width: 768px) {
+  .userTable {
+    padding: 15px;
+  }
+
+  .userTable table {
+    font-size: 12px;
+  }
+
+  .userTable thead th,
+  .userTable tbody td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .userTable .btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .actionButtons .btn-info,
+  .actionButtons .btn-danger {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
 }
