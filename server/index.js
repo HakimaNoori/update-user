@@ -19,7 +19,7 @@ mongoose
     .then(() => {
         console.log('Connected to MongoDB Detabess successfully');
         app.listen(PORT, () => {
-            console.log(`Server is running on port localhost:${PORT}`);
+            console.log(`Server is running on port:${PORT}`);
         });
     })
     .catch((error) => {

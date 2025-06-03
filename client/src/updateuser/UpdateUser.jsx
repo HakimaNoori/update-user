@@ -23,21 +23,24 @@ const UpdateUser = () => {
   };
 
   useEffect(() => { 
-    axios.get(`http://localhost:8000/api/user/${id}`).then((response) => {
-      setUser(response.data);
-    }).catch((error) => {
-      console.log(error)
-    });
+    axios
+      .get(`https://update-user.onrender.com/api/user/${id}`)
+      .then((response) => {
+        setUser(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, [id]);
 
   const submitForm = async (e) => {
     e.preventDefault();
     await axios
-      .put(`http://localhost:8000/api/update/${id}`, user)
+      .put(`https://update-user.onrender.com/api/update/${id}`, user)
 
       .then((response) => {
         toast.success(response.data.message, { position: "top-right" });
-        
+
         navigate("/");
       })
       .catch((error) => {

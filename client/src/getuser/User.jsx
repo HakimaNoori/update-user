@@ -10,7 +10,9 @@ const User = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/users");
+        const response = await axios.get(
+          "https://update-user.onrender.com/api/users"
+        );
         setUsers(response.data);
       } catch (error) {
         console.log("Error fetching users:", error);
@@ -21,11 +23,10 @@ const User = () => {
 
   const deleteUser = async (userId) => {
     await axios
-      .delete(`http://localhost:8000/api/delete/user/${userId}`)
+      .delete(`https://update-user.onrender.com/api/delete/user/${userId}`)
       .then((response) => {
         setUsers((prevUser) => prevUser.filter((user) => user._id !== userId));
         toast.success(response.data.message, { position: "top-right" });
-
       })
       .catch((error) => {
         console.log(error);
