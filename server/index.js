@@ -11,11 +11,11 @@ app.use(cors());
 dotenv.config();
 
 const PORT = process.env.PORT || 8000;
-const MONGO_URI = process.env.MONGO_URI; 
+const MONGODB_URI = process.env.MONGODB_URI; 
 
 mongoose
 
-    .connect(MONGO_URI)
+    .connect(MONGODB_URI)
     .then(() => {
         console.log('Connected to MongoDB Detabess successfully');
         app.listen(PORT, () => {
